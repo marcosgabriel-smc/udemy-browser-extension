@@ -83,16 +83,16 @@ function extractCourseTime() {
 setTimeout(() => {
     if (window.location.href.includes("udemy.com/course/")) {
         extractCourseTime();
+        
+        let lastUrl = location.href;
+        new MutationObserver(() => {
+            const url = location.href;
+            if (url !== lastUrl) {
+                lastUrl = url;
+                if (url.includes("udemy.com/course/")) {
+                    extractCourseTime();
+                }
+            }
+        }).observe(document, { subtree: true, childList: true });
     }
-}, 10000);
-
-let lastUrl = location.href;
-new MutationObserver(() => {
-    const url = location.href;
-    if (url !== lastUrl) {
-        lastUrl = url;
-        if (url.includes("udemy.com/course/")) {
-            extractCourseTime();
-        }
-    }
-}).observe(document, { subtree: true, childList: true }); 
+}, 10000); 
