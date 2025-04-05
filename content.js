@@ -33,6 +33,16 @@ function createTimeDisplay(activePanel, totalMinutes) {
     }
 }
 
+function updateUdemyTimeDisplay(activePanel, remainingMinutes) {
+    const parentElement = activePanel.parentElement;
+    const targetElement = parentElement.querySelector(".ud-accordion-panel-toggler .ud-text-xs.section--progress--hWZfz span");
+
+    if (targetElement) {
+        const previousText = targetElement.textContent;
+        targetElement.textContent = `${previousText} | Remaining: ${formatTime(remainingMinutes)}`;
+    }
+}
+
 let totalMinutes = 0;
 let watchedMinutes = 0;
 let remainingMinutes = 0;
@@ -64,7 +74,7 @@ function extractCourseTime() {
 
         remainingMinutes = totalMinutes - watchedMinutes;
         if (remainingMinutes !== lastRemainingMinutes) {
-            createTimeDisplay(activePanel, remainingMinutes);
+            updateUdemyTimeDisplay(activePanel, remainingMinutes);
             lastRemainingMinutes = remainingMinutes;
         }
     }
