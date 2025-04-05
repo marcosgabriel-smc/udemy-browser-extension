@@ -1,0 +1,14 @@
+{
+  "name": "udemy-course-time-tracker-firefox",
+  "version": "1.0.0",
+  "description": "Firefox extension that shows remaining time for Udemy courses",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "archiver": "^5.3.1"
+  },
+  "author": "",
+  "license": "MIT"
+} 
