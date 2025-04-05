@@ -1,0 +1,25 @@
+#udemy-time-display {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#udemy-time-display .time-container {
+    text-align: center;
+}
+
+#udemy-time-display h3 {
+    margin: 0 0 10px 0;
+    color: #1c1d1f;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#udemy-time-display p {
+    margin: 0;
+    color: #5624d0;
+    font-size: 24px;
+    font-weight: 700;
+} 
